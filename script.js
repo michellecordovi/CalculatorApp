@@ -8,18 +8,8 @@
 //SCREEN
 let screen = document.getElementById("screen");
 
-// NUMBER KEYS
-const zero = document.querySelector(".zero")
-const one = document.querySelector(".one");
-const two = document.querySelector(".two");
-const three = document.querySelector(".three");
-const four = document.querySelector(".four");
-const five = document.querySelector(".five");
-const six = document.querySelector(".six");
-const seven = document.querySelector(".seven");
-const eight = document.querySelector(".eight");
-const nine = document.querySelector(".nine");
-const decimalPoint = document.querySelector(".point");
+//NUMBER KEYS
+const numbers = document.getElementsByClassName("number");
 
 // OPERATOR KEYS
 const plus = document.querySelector(".plus");
@@ -27,56 +17,106 @@ const minus = document.querySelector(".minus");
 const divide = document.querySelector(".divide");
 const multiply = document.querySelector(".multiply");
 
+const operators = [plus, minus, divide, multiply];
+
 // OTHER BUTTONS
 const equals = document.querySelector(".equal");
 const reset = document.querySelector(".reset");
 const del = document.querySelector(".delete");
 
 
-const numbers = [zero, one, two, three, four, five, six, seven, eight, nine, decimalPoint];
-const operators = [plus, minus, divide, multiply];
-
 let print = []//what's printed on the screen
 let input = []//ongoing equation
 let num1;
 let num2;
+let operator;
 let total;
 
 for (let i = 0; i < numbers.length; i++){
       numbers[i].onclick = () => {
-            print.push(numbers[i].innerHTML);
-            input.push(numbers[i].innerHTML);
-            screen.innerHTML = print.join("");
+            if (num1 === undefined && num2 === undefined) {
+                  print.push(numbers[i].innerHTML);
+                  input.push(numbers[i].innerHTML);
+                  screen.innerHTML = print.join("");
+                  num1 = input.join("") * 1;
+            } else if ((num1 !== undefined) && (num2 === undefined)) {
+                  print.push(numbers[i].innerHTML);
+                  input.push(numbers[i].innerHTML);
+                  screen.innerHTML = print.join("");
+                  num2 = input.join("") * 1;
+                  calculate(num1, num2);
+                  operator = ""
+            } else if ((num1 !== undefined) && (num2 !== undefined)) {
+                  print.push(numbers[i].innerHTML);
+                  input.push(numbers[i].innerHTML);
+                  num1 = total;
+                  num2 = input.join("") * 1;
+                  calculate(num1, num2);
+                  screen.innerHTML = print.join();
+                  input = [];
+            }
       };
 }
 
-
-plus.onclick = () => {
-      if (num1 === undefined) {
-            print = [];
-            screen.innerHTML = print;    
-            num1 = input.join("") * 1;
-            input = [];
-      } else if ((num1 !== undefined) && (num2 === undefined)){
-            print = [];
-            num2 = input.join("") * 1;
-            total = num1 + num2;
-            screen.innerHTML = total;
-            input = [];
-      } else if ((num1 !== undefined) && (num2 !== undefined)) {
-            print = [];
-            num1 = total;
-            num2 = input.join("") * 1;
-            total = num1 + num2;
-            screen.innerHTML = total;
-            input = [];
+for (let i = 0; i < operators.length; i++){
+      operators[i].onclick = () => {
+            if (num1 !== undefined && num2 === undefined) {
+                  input = [];
+                  print = [];
+                  screen.innerHTML = print;   
+                  operator = operators[i].innerHTML;
+            } else if ((num1 !== undefined) && (num2 !== undefined)){
+                  input = [];
+                  print = [];
+                  screen.innerHTML = total;   
+                  operator = operators[i].innerHTML;
+            }
       }
 }
 
- 
-// equals.onclick = () => {
-      
+function calculate(number1, number2) {
+      if (operator === "+") {
+            total = number1 + number2;
+      } else if (operator === "-") {
+            total = number1 - number2;
+      } else if (operator === "/") {
+            total = number1 / number2;
+      }else if (operator === "x") {
+            total = number1 * number2;
+      }
+}
+//ADDITION EVENT LISTENER
+// plus.onclick = () => {
+//       if (num1 === undefined) {
+//             print = [];
+//             screen.innerHTML = print;    
+//             num1 = input.join("") * 1;
+//             input = [];
+//       } else if ((num1 !== undefined) && (num2 === undefined)){
+//             print = [];
+//             num2 = input.join("") * 1;
+//             total = num1 + num2;
+//             screen.innerHTML = total;
+//             input = [];
+//       } else if ((num1 !== undefined) && (num2 !== undefined)) {
+//             print = [];
+//             num1 = total;
+//             num2 = input.join("") * 1;
+//             total = num1 + num2;
+//             screen.innerHTML = total;
+//             input = [];
+//       }
 // }
+
+equals.onclick = () => {
+      screen.innerHTML = total;
+      input = [];
+      print = [];
+      num1 = undefined;
+      num2 = undefined;
+      total = undefined;
+      operator = "";
+}
 
 reset.onclick = () => {
       screen.innerHTML = "0";
