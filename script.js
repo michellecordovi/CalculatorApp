@@ -85,28 +85,7 @@ function calculate(number1, number2) {
             total = number1 * number2;
       }
 }
-//ADDITION EVENT LISTENER
-// plus.onclick = () => {
-//       if (num1 === undefined) {
-//             print = [];
-//             screen.innerHTML = print;    
-//             num1 = input.join("") * 1;
-//             input = [];
-//       } else if ((num1 !== undefined) && (num2 === undefined)){
-//             print = [];
-//             num2 = input.join("") * 1;
-//             total = num1 + num2;
-//             screen.innerHTML = total;
-//             input = [];
-//       } else if ((num1 !== undefined) && (num2 !== undefined)) {
-//             print = [];
-//             num1 = total;
-//             num2 = input.join("") * 1;
-//             total = num1 + num2;
-//             screen.innerHTML = total;
-//             input = [];
-//       }
-// }
+
 
 equals.onclick = () => {
       screen.innerHTML = total;
@@ -125,5 +104,3 @@ reset.onclick = () => {
       num1 = undefined;
       num2 = undefined;
 }
-
-console.log(num1)
