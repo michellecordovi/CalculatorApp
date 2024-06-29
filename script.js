@@ -35,25 +35,27 @@ let total;
 //NUMBER CLICK FUNCTION
 for (let i = 0; i < numbers.length; i++){
       numbers[i].onclick = () => {
-            if (num1 === undefined && num2 === undefined) {
+            if (operator === undefined) {
                   print.push(numbers[i].innerHTML);
                   input.push(numbers[i].innerHTML);
-                  screen.innerHTML = print.join("");
-                  num1 = input.join("") * 1;
-            } else if ((num1 !== undefined) && (num2 === undefined)) {
+                  screen.innerHTML = parseFloat(print.join(""));
+                  num1 = parseFloat(input.join(""));
+                  console.log(num1);
+            } else if (operator !== undefined) {
                   print.push(numbers[i].innerHTML);
                   input.push(numbers[i].innerHTML);
-                  screen.innerHTML = print.join("");
-                  num2 = input.join("") * 1;
+                  screen.innerHTML = parseFloat(print.join(""));
+                  num2 = parseFloat(input.join(""));
                   calculate(num1, num2);
-                  operator = ""
-            } else if ((num1 !== undefined) && (num2 !== undefined)) {
+                  console.log(num1);
+                  console.log(num2);
+            } else if ((operator !== undefined) && (total !== undefined)) {
                   print.push(numbers[i].innerHTML);
                   input.push(numbers[i].innerHTML);
                   num1 = total;
-                  num2 = input.join("") * 1;
+                  num2 = parseFloat(input.join(""));
                   calculate(num1, num2);
-                  screen.innerHTML = print.join();
+                  screen.innerHTML = parseFloat(print.join(""));
                   input = [];
             }
       };
@@ -63,17 +65,17 @@ for (let i = 0; i < numbers.length; i++){
 //OPERATOR CLICK FUNCTION
 for (let i = 0; i < operators.length; i++){
       operators[i].onclick = () => {
-            if (num1 !== undefined && num2 === undefined) {
+            if (operator === undefined) {
                   input = [];
                   print = [];
                   screen.innerHTML = print;   
                   operator = operators[i].innerHTML;
-            } else if ((num1 !== undefined) && (num2 !== undefined)){
+            } else if (operator !== undefined){
                   input = [];
                   print = [];
                   screen.innerHTML = total;   
                   operator = operators[i].innerHTML;
-            }
+            } 
       }
 }
 
@@ -97,8 +99,6 @@ equals.onclick = () => {
       print = [];
       num1 = undefined;
       num2 = undefined;
-      total = undefined;
-      operator = "";
 }
 
 //RESET FUNCTION
@@ -108,4 +108,6 @@ reset.onclick = () => {
       input = [];
       num1 = undefined;
       num2 = undefined;
+      operator = undefined;
+      total = undefined;
 }
