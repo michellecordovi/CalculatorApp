@@ -1,10 +1,3 @@
-//when a number is clicked, that number is printed to the screen and added to the equation
-//when an operator is clicked, the screen is cleared and that operator is added to the equation
-//when delete is clicked, the equation is cleared and the screen is cleared
-//when equal(=) is clicked, the value of the equation is printed on the screen
-//when the equation value is printed on the screen,  the next button click should replace that
-
-
 //SCREEN
 let screen = document.getElementById("screen");
 
@@ -52,7 +45,6 @@ for (let i = 0; i < operators.length; i++){
             if (operator === undefined) {
                   input = [];
                   print = [];
-                  screen.innerHTML = print;   
                   operator = operators[i].innerHTML;
             } else if (operator !== undefined){
                   input = [];
