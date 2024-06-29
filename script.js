@@ -12,12 +12,7 @@ let screen = document.getElementById("screen");
 const numbers = document.getElementsByClassName("number");
 
 // OPERATOR KEYS
-const plus = document.querySelector(".plus");
-const minus = document.querySelector(".minus");
-const divide = document.querySelector(".divide");
-const multiply = document.querySelector(".multiply");
-
-const operators = [plus, minus, divide, multiply];
+const operators = document.getElementsByClassName("operator")
 
 // OTHER BUTTONS
 const equals = document.querySelector(".equal");
@@ -59,9 +54,6 @@ for (let i = 0; i < operators.length; i++){
                   print = [];
                   screen.innerHTML = print;   
                   operator = operators[i].innerHTML;
-                  console.log(num1)
-                  console.log(num2)
-                  console.log(total)
             } else if (operator !== undefined){
                   input = [];
                   print = [];
