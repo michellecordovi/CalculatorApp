@@ -32,6 +32,7 @@ let num2;
 let operator;
 let total;
 
+//NUMBER CLICK FUNCTION
 for (let i = 0; i < numbers.length; i++){
       numbers[i].onclick = () => {
             if (num1 === undefined && num2 === undefined) {
@@ -58,6 +59,8 @@ for (let i = 0; i < numbers.length; i++){
       };
 }
 
+
+//OPERATOR CLICK FUNCTION
 for (let i = 0; i < operators.length; i++){
       operators[i].onclick = () => {
             if (num1 !== undefined && num2 === undefined) {
@@ -74,6 +77,7 @@ for (let i = 0; i < operators.length; i++){
       }
 }
 
+//CALCULATE FUNCTION
 function calculate(number1, number2) {
       if (operator === "+") {
             total = number1 + number2;
@@ -86,7 +90,7 @@ function calculate(number1, number2) {
       }
 }
 
-
+//EQUAL FUNCTION
 equals.onclick = () => {
       screen.innerHTML = total;
       input = [];
@@ -97,6 +101,7 @@ equals.onclick = () => {
       operator = "";
 }
 
+//RESET FUNCTION
 reset.onclick = () => {
       screen.innerHTML = "0";
       print = [];
