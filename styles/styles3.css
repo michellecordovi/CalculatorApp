@@ -7,7 +7,7 @@
 
 body {
       font-family: "League Spartan", Arial, Helvetica, sans-serif;
-      background-color: hsl(0, 0%, 90%);
+      background-color: hsl(268, 75%, 9%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -30,7 +30,7 @@ main{
 #header {
       height: 44px;
       margin-bottom: 2rem;
-      color: hsl(60, 10%, 19%);
+      color: hsl(52, 100%, 62%);
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -61,7 +61,7 @@ p{
 
 #toggle {
       grid-column: 1/ span 3;
-      background-color: hsl(0, 5%, 81%);
+      background-color: hsl(268, 71%, 12%);
       width: 71px;
       height: 26px;
       padding: 0px 0.3em;
@@ -75,14 +75,14 @@ p{
       height: 1rem;
       width: 1rem;
       border-radius: 100%;
-      background-color:hsl(25, 98%, 40%);
+      background-color:hsl(176, 100%, 44%);
 }
 
 /* SCREEN */
 #screen {
       height: 128px;
-      color:  hsl(60, 10%, 19%);
-      background-color:  hsl(0, 0%, 93%);
+      color:  hsl(52, 100%, 62%);
+      background-color:  hsl(268, 71%, 12%);
       margin-bottom: 1.5rem;
       padding: 0px 27.2px;
       border-radius: 10px;
@@ -104,7 +104,7 @@ p{
 #calculator {
       height: 480px;
       padding: 26.27px 27.2px;
-      background-color:  hsl(0, 5%, 81%);
+      background-color:  hsl(268, 71%, 12%);
       border-radius: 10px;
       font-size: 2.5rem;
       display: grid;
@@ -115,12 +115,12 @@ p{
 }
 
 .key {
-      background-color: hsl(45, 7%, 89%);
+      background-color: hsl(268, 47%, 21%);
       width: 101px;
       height: 59px;
       border-radius: 10px;
-      box-shadow: 0px 5px hsl(35, 11%, 61%);
-      color: hsl(60, 10%, 19%);
+      box-shadow: 0px 5px hsl(290, 70%, 36%);
+      color: hsl(52, 100%, 62%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -133,20 +133,21 @@ p{
 
 .delete,
 .reset {
-      background-color:hsl(185, 42%, 37%);
-      box-shadow: 0px 5px hsl(185, 58%, 25%);
+      background-color:hsl(281, 89%, 26%);
+      box-shadow: 0px 5px hsl(285, 91%, 52%);
 }
 
 .equal {
       width: 100%;
       grid-column: 3/ span 2;
-      background-color: hsl(25, 98%, 40%);
-      box-shadow: 0px 5px hsl(25, 99%, 27%);
+      background-color: hsl(176, 100%, 44%);
+      box-shadow: 0px 5px hsl(177, 92%, 70%);
+      color: hsl(198, 20%, 13%);
+      font-size: 28px;
 }
 
 .reset,
-.delete,
-.equal {
+.delete{
       color: hsl(0, 0%, 100%);
       font-size: 28px;
 }
@@ -155,9 +156,14 @@ p{
 
 
 /* KEY HOVER & ACTIVE EFFECTS */
+#toggle-ball:hover{
+      background-color: hsl(177, 92%, 70%);
+      cursor: pointer;
+}
+
 .key:hover {
       cursor: pointer;
-      background-color: white;
+      background-color: hsl(268, 54%, 44%);
 }
 
 .key:active {
@@ -167,11 +173,11 @@ p{
 
 .delete:hover,
 .reset:hover{
-      background-color: hsl(184, 40%, 56%);
+      background-color: hsl(280, 56%, 44%);
 }
 
 .equal:hover{
-      background-color: hsl(25, 100%, 61%)
+      background-color: hsl(176, 100%, 79%)
 }
 
 
@@ -203,6 +209,7 @@ p{
 
 /* FOOTER */
 .attribution {
+      color: white;
       font-size: 12px;
       text-align: center;
 }
