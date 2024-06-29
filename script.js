@@ -14,7 +14,6 @@ const del = document.querySelector(".delete");
 
 
 let print = []//what's printed on the screen
-let input = []//ongoing equation
 let num1;
 let num2;
 let operator;
@@ -25,14 +24,12 @@ for (let i = 0; i < numbers.length; i++){
       numbers[i].onclick = () => {
             if (operator === undefined) {
                   print.push(numbers[i].innerHTML);
-                  input.push(numbers[i].innerHTML);
                   screen.innerHTML = parseFloat(print.join(""));
-                  num1 = parseFloat(input.join(""));
+                  num1 = parseFloat(print.join(""));
             } else if (operator !== undefined) {
                   print.push(numbers[i].innerHTML);
-                  input.push(numbers[i].innerHTML);
                   screen.innerHTML = parseFloat(print.join(""));
-                  num2 = parseFloat(input.join(""));
+                  num2 = parseFloat(print.join(""));
                   calculate(num1, num2);
             }
       };
@@ -43,11 +40,9 @@ for (let i = 0; i < numbers.length; i++){
 for (let i = 0; i < operators.length; i++){
       operators[i].onclick = () => {
             if (operator === undefined) {
-                  input = [];
                   print = [];
                   operator = operators[i].innerHTML;
             } else if (operator !== undefined){
-                  input = [];
                   print = [];
                   screen.innerHTML = total;   
                   operator = operators[i].innerHTML;
@@ -72,7 +67,6 @@ function calculate(number1, number2) {
 //EQUAL FUNCTION
 equals.onclick = () => {
       screen.innerHTML = total;
-      input = [];
       print = [];
 }
 
@@ -80,7 +74,6 @@ equals.onclick = () => {
 function resetAll() {
       screen.innerHTML = "0";
       print = [];
-      input = [];
       num1 = undefined;
       num2 = undefined;
       operator = undefined;
@@ -92,7 +85,6 @@ reset.onclick = resetAll;
 //DELETE FUNCTION
 del.onclick = () => {
       if (print.length > 1) {
-            input.pop();
             print.pop();
             screen.innerHTML = parseFloat(print.join(""))
       } else{
