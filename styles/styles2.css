@@ -1,0 +1,212 @@
+* {
+      padding: 0px;
+      margin: 0px;
+      box-sizing: border-box;
+      transition: all 0.1s ease-out
+}
+
+body {
+      font-family: "League Spartan", Arial, Helvetica, sans-serif;
+      background-color: hsl(0, 0%, 90%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+}
+
+main{
+      margin: 6rem auto;
+      width: 540px;
+      height: 708px;
+}
+
+@media only screen and (max-width:650px) {
+      main{
+            width: 327px;
+      }
+}
+
+/* HEADER */
+#header {
+      height: 44px;
+      margin-bottom: 2rem;
+      color: hsl(60, 10%, 19%);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+}
+
+#logo{
+      font-size: 2rem;
+}
+
+#theme {
+      height: 100%;
+      font-size: 12;
+      display: flex;
+      align-items: flex-end;
+      gap: 1.5rem;
+}
+
+p{
+      margin-bottom: 0.2em;
+}
+
+#theme-setter {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 71px;
+      justify-items: center;
+}
+
+#toggle {
+      grid-column: 1/ span 3;
+      background-color: hsl(0, 5%, 81%);
+      width: 71px;
+      height: 26px;
+      padding: 0px 0.3em;
+      border-radius: 13px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+}
+
+#toggle-ball {
+      height: 1rem;
+      width: 1rem;
+      border-radius: 100%;
+      background-color:hsl(25, 98%, 40%);
+}
+
+/* SCREEN */
+#screen {
+      height: 128px;
+      color:  hsl(60, 10%, 19%);
+      background-color:  hsl(0, 0%, 93%);
+      margin-bottom: 1.5rem;
+      padding: 0px 27.2px;
+      border-radius: 10px;
+      font-size: 3.5rem;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+}
+
+@media only screen and (max-width:650px) {
+    #screen{
+      height: 88px;
+      font-size: 2.5rem;
+    }
+}
+
+
+/* CALCULATOR */
+#calculator {
+      height: 480px;
+      padding: 26.27px 27.2px;
+      background-color:  hsl(0, 5%, 81%);
+      border-radius: 10px;
+      font-size: 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center;
+      align-items: center;
+      column-gap: 27.2px;
+}
+
+.key {
+      background-color: hsl(45, 7%, 89%);
+      width: 101px;
+      height: 59px;
+      border-radius: 10px;
+      box-shadow: 0px 5px hsl(35, 11%, 61%);
+      color: hsl(60, 10%, 19%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.reset{
+      width: 100%;
+      grid-column: 1/ span 2;
+}
+
+.delete,
+.reset {
+      background-color:hsl(185, 42%, 37%);
+      box-shadow: 0px 5px hsl(185, 58%, 25%);
+}
+
+.equal {
+      width: 100%;
+      grid-column: 3/ span 2;
+      background-color: hsl(25, 98%, 40%);
+      box-shadow: 0px 5px hsl(25, 99%, 27%);
+}
+
+.reset,
+.delete,
+.equal {
+      color: hsl(0, 0%, 100%);
+      font-size: 28px;
+}
+
+
+
+
+/* KEY HOVER & ACTIVE EFFECTS */
+.key:hover {
+      cursor: pointer;
+      background-color: white;
+}
+
+.key:active {
+     transform: translateY(4px);
+      box-shadow: 0px 0px;
+}
+
+.delete:hover,
+.reset:hover{
+      background-color: hsl(184, 40%, 56%);
+}
+
+.equal:hover{
+      background-color: hsl(25, 100%, 61%)
+}
+
+
+@media only screen and (max-width:650px) {
+      #calculator{
+            height: 420px;
+            padding:20px;
+            justify-items: space-evenly;
+            column-gap:0.6rem;
+            font-size: 2rem;
+      }
+
+      .reset,
+      .delete,
+      .equal {
+            font-size: 1.25rem;
+      }
+
+      .key{
+            width: 60px;
+      }
+
+      .reset,
+      .equal{
+            width: 100%;
+      }
+}
+
+
+/* FOOTER */
+.attribution {
+      font-size: 12px;
+      text-align: center;
+}
+
+.attribution a {
+      color:hsl(185, 42%, 37%);
+}
