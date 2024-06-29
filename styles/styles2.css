@@ -155,6 +155,11 @@ p{
 
 
 /* KEY HOVER & ACTIVE EFFECTS */
+#toggle-ball:hover{
+      background-color: hsl(25, 100%, 61%);
+      cursor: pointer;
+}
+
 .key:hover {
       cursor: pointer;
       background-color: white;
@@ -171,7 +176,7 @@ p{
 }
 
 .equal:hover{
-      background-color: hsl(25, 100%, 61%)
+      background-color: hsl(25, 100%, 61%);
 }
 
 
