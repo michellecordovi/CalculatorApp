@@ -40,23 +40,12 @@ for (let i = 0; i < numbers.length; i++){
                   input.push(numbers[i].innerHTML);
                   screen.innerHTML = parseFloat(print.join(""));
                   num1 = parseFloat(input.join(""));
-                  console.log(num1);
             } else if (operator !== undefined) {
                   print.push(numbers[i].innerHTML);
                   input.push(numbers[i].innerHTML);
                   screen.innerHTML = parseFloat(print.join(""));
                   num2 = parseFloat(input.join(""));
                   calculate(num1, num2);
-                  console.log(num1);
-                  console.log(num2);
-            } else if ((operator !== undefined) && (total !== undefined)) {
-                  print.push(numbers[i].innerHTML);
-                  input.push(numbers[i].innerHTML);
-                  num1 = total;
-                  num2 = parseFloat(input.join(""));
-                  calculate(num1, num2);
-                  screen.innerHTML = parseFloat(print.join(""));
-                  input = [];
             }
       };
 }
@@ -70,11 +59,15 @@ for (let i = 0; i < operators.length; i++){
                   print = [];
                   screen.innerHTML = print;   
                   operator = operators[i].innerHTML;
+                  console.log(num1)
+                  console.log(num2)
+                  console.log(total)
             } else if (operator !== undefined){
                   input = [];
                   print = [];
                   screen.innerHTML = total;   
                   operator = operators[i].innerHTML;
+                  num1 = total;
             } 
       }
 }
