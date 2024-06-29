@@ -82,8 +82,8 @@ equals.onclick = () => {
       screen.innerHTML = total;
       input = [];
       print = [];
-      num1 = undefined;
-      num2 = undefined;
+      // num1 = undefined;
+      // num2 = undefined;
 }
 
 //RESET FUNCTION
