@@ -82,12 +82,10 @@ equals.onclick = () => {
       screen.innerHTML = total;
       input = [];
       print = [];
-      // num1 = undefined;
-      // num2 = undefined;
 }
 
 //RESET FUNCTION
-reset.onclick = () => {
+function resetAll() {
       screen.innerHTML = "0";
       print = [];
       input = [];
@@ -95,4 +93,18 @@ reset.onclick = () => {
       num2 = undefined;
       operator = undefined;
       total = undefined;
+}
+
+reset.onclick = resetAll;
+
+//DELETE FUNCTION
+del.onclick = () => {
+      if (print.length > 1) {
+            input.pop();
+            print.pop();
+            screen.innerHTML = parseFloat(print.join(""))
+      } else{
+            resetAll();
+            screen.innerHTML = "0";
+      }
 }
