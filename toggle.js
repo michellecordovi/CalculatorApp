@@ -12,7 +12,6 @@ function onDragStart(e) {
       e.target.style.opacity = "0.5";
       e.dataTransfer.effectAllowed = 'move';
       e.dataTransfer.setData('text/plain', "toggle-ball");
-      console.log("drag start")
 }
 
 toggleBall.addEventListener("dragstart", onDragStart)
@@ -20,12 +19,10 @@ toggleBall.addEventListener("dragstart", onDragStart)
 //DRAG TARGET FUNCTIONS
 function onDragOver(e) {
       e.preventDefault();
-      console.log("drag over")
 }
 
 function onDragEnter(e) {
       e.preventDefault();
-      console.log("drag enter")
 }
 
 function onDrop(e) {
@@ -38,9 +35,9 @@ function onDrop(e) {
             toggleBall.style.opacity = "1";
             changeThemes();
       } 
-
 }
 
+//FUNCTION TO CHANGE THEMES UPON MOVEMENT OF TOGGLE BALL
 function changeThemes() {     
       if (toggleBall.parentNode === themes[0]) {
             styleSetting.setAttribute("href", './styles/styles1.css');
@@ -57,3 +54,24 @@ for (let i = 0; i < themes.length; i++) {
       themes[i].addEventListener("dragenter", onDragEnter);
       themes[i].addEventListener("drop", onDrop);
 }
+
+
+//TOUCH SETTING
+
+function mobileThemeChanger() {
+      if (toggleBall.parentNode === themes[0]) {
+            themes[0].removeChild(toggleBall);
+            themes[1].appendChild(toggleBall);
+            changeThemes();
+      } else if (toggleBall.parentNode === themes[1]) {
+            themes[1].removeChild(toggleBall);
+            themes[2].appendChild(toggleBall);
+            changeThemes();
+      } else if (toggleBall.parentNode === themes[2]) {
+            themes[2].removeChild(toggleBall);
+            themes[0].appendChild(toggleBall);
+            changeThemes();
+      }
+}
+
+toggleBall.addEventListener("touchend", mobileThemeChanger)
