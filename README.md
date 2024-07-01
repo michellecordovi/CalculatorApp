@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [](https://github.com/michellecordovi/CalculatorApp)
-- Live Site URL: [](https://michellecordovi.github.io/CalculatorApp/)
+- Solution URL: [https://github.com/michellecordovi/CalculatorApp]()
+- Live Site URL: [https://michellecordovi.github.io/CalculatorApp/]()
 
 ## My process
 
