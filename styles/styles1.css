@@ -71,6 +71,14 @@ p{
       align-items: center;
 }
 
+.toggle-theme {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
 #toggle-ball {
       height: 1rem;
       width: 1rem;
