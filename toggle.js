@@ -74,4 +74,4 @@ function mobileThemeChanger() {
       }
 }
 
-toggleBall.addEventListener("touchend", mobileThemeChanger)
+toggleBall.addEventListener("click", mobileThemeChanger)
